@@ -95,7 +95,15 @@ class BooksApp extends React.Component {
               </Link>
             </div>
           </div>
-          </Route> 
+          </Route>
+          <Route  render={()=>(
+            <div>
+              <h1>oops!!! this is not a avalid route</h1>
+              <Link to="/">
+                Let's go back
+              </Link>
+          </div>
+          )} /> 
         </Switch>
       </div>
       

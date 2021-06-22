@@ -39,18 +39,19 @@ class SearchBar extends Component {
     }
 
     handleSearch =(search)=>{
-          this.setState(()=>({searchTerm : search.trim()}));
+          this.setState(()=>({searchTerm : search}));
 
           if (search.length > 0){
             BookAPI.search(search)
             .then((result)=>{
-              if (result.length > 0) {
-                
                 this.setState(()=>({
                   result , 
-                }));
-              }
+                }));     
           })
+        }else{
+          this.setState(()=>({
+            result : []
+          }))
         }
     }
 

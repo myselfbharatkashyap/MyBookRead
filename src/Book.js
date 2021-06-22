@@ -10,14 +10,14 @@ class Book extends Component {
             this.props.updateShelf(book, shelf);
              alert("Book shelf is update sucessfully!!!")
         }
-
+        
         return(
             <li key={this.props.book.title}>
                   <div className="book">
                     <div className="book-top">
                       <div className="book-cover" style={{ 
                         width: 128, height: 193, 
-                        backgroundImage:`url(${this.props.book.imageLinks.thumbnail})`
+                        backgroundImage:`url(${this.props.book.imageLinks !== undefined ? this.props.book.imageLinks.thumbnail: 'No Image'})`
                         }}></div>
                         
                       <div className="book-shelf-changer">
